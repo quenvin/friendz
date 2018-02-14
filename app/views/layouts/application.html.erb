@@ -3,6 +3,18 @@
   <head>
     <title>Friendz</title>
     <%= csrf_meta_tags %>
+    <p class = "notice"><%= notice %></p>
+    <p class = "alert"><%= alert %></p>
+    
+    <% if current_user %>
+    Saluations ! <%= current_user.email %>
+    <%= link_to('log out' , destroy_user_session_path , method: :delete) %>
+    <%= link_to('change_password' , edit_user_registration_path) %>
+    <% else %>
+    <%= link_to('register' , new_user_registration_path) %>
+    <%= link_to('log in' , new_user_session_path) %>
+    <% end %>
+
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
