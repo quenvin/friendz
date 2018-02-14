@@ -13,6 +13,10 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  def show
+    @posts = current_user.posts
+  end
+
   private
 
   def post_params

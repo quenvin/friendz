@@ -1,10 +1,11 @@
 <h1>Front_end</h1>
 
 <a href="/posts/new">New Post</a>
+<a href="/posts/show">My Posts</a>
 
 
 <% @posts.each do |post| %>
   <div class="allpost">
-    <p id="post"><strong><u><%= post.user.email %> </strong><br></u><%= post.message %></p>
+    <p id="post"><strong><%= post.user.email %> : </strong></u><%= post.message %></p>
   </div>
 <% end %>
