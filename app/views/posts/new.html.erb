@@ -1,1 +1,14 @@
 <h1>Add new post page</h1>
+
+ <%= form_for @post, url: posts_path, method: :post do |post| %>
+    <div class="newpost">
+    
+      <%= post.label :post %>
+      <%= post.text_area :post %>
+
+      <div class="create_post">
+        <%= post.submit %>
+      </div>
+
+    </div>
+  <% end %>
