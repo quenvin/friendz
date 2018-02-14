@@ -3,8 +3,8 @@
  <%= form_for @post, url: posts_path, method: :post do |post| %>
     <div class="newpost">
     
-      <%= post.label :post %>
-      <%= post.text_area :post %>
+      <%= post.label :message %>
+      <%= post.text_area :message %>
 
       <div class="create_post">
         <%= post.submit %>
