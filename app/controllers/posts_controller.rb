@@ -6,4 +6,21 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
+
+  def create
+    post = current_user.posts.new(post_params)
+    post.save
+    redirect_to posts_path
+  end
+
+  def show
+    @posts = current_user.posts
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:message)
+  end
+
 end
