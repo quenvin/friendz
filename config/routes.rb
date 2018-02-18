@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   root "posts#index"
 
   resources :posts
+
+  namespace :admin do
+    resources :posts
+    root "posts#index"
+  end
   
 
 end
