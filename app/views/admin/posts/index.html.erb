@@ -1,0 +1,8 @@
+<h1>Admin index.html</h1>
+
+<% @posts.each do |post| %>
+  <div class="allpost">
+    <p id="post"><strong><%= post.user.email %> : </strong></u><%= post.message %></p>
+        <%= link_to 'Delete', admin_post_path(post), method: :delete, data: {confirm:"Are you sure?"} %>
+  </div>
+<% end %>
