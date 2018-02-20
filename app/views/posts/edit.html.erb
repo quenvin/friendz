@@ -1,15 +1,14 @@
-<h1>Add new post page</h1>
+<h1>Edit Post Page</h1>
 
  <%= form_for @post, url: posts_path, method: :post do |post| %>
-    <div class="newpost">
+    <div class="editpost">
     
       <%= post.label :message %>
       <%= post.text_area :message %>
 
-      <div class="create_post">
+      <div class="edit_post">
         <%= post.submit %>
       </div>
 
     </div>
   <% end %>
-  <input type="button" value="Go back!" onclick="history.back()">

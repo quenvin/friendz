@@ -1,12 +1,8 @@
-<h1>Front_end</h1>
-
-<a href="/posts/new">New Post</a>
-<a href="/posts/show">My Posts</a>
-
+<h1>Admin index.html</h1>
 
 <% @posts.each do |post| %>
   <div class="allpost">
     <p id="post"><strong><%= post.user.email %> : </strong></u><%= post.message %></p>
+        <%= link_to 'Delete', admin_post_path(post), method: :delete, data: {confirm:"Are you sure?"} %>
   </div>
 <% end %>
-<%= link_to "My profile page", current_user %>
