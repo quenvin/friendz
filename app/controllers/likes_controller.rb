@@ -1,10 +1,7 @@
 class LikesController < ApplicationController
 
   def create
-    # byebug
-    # @like = Like.create(likes_params)
     Like.create(post_id: params[:id], user: current_user)
-    # @post = @like.post
     @posts = Post.all
     render :toggle
   end
