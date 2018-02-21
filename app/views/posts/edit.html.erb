@@ -1,14 +1,14 @@
 <h1>Edit Post Page</h1>
 
- <%= form_for @post, url: posts_path, method: :post do |post| %>
-    <div class="editpost">
-    
-      <%= post.label :message %>
-      <%= post.text_area :message %>
+<%= form_for @post, url: posts_path, method: :post do |post| %>
+  <div class="editpost">
+  
+    <%= post.label :message %>
+    <%= post.text_area :message %>
 
-      <div class="edit_post">
-        <%= post.submit %>
-      </div>
-
+    <div class="edit_post">
+      <%= post.submit %>
     </div>
-  <% end %>
+
+  </div>
+<% end %>

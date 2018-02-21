@@ -9,7 +9,17 @@
       <div class="create_post">
         <%= post.submit %>
       </div>
+<%= form_for @post, url: posts_path, method: :post do |post| %>
+  <div class="newpost">
+  
+    <%= post.label :message %>
+    <%= post.text_area :message %>
 
+    <div class="create_post">
+      <%= post.submit %>
     </div>
-  <% end %>
-  <input type="button" value="Go back!" onclick="history.back()">
+
+  </div>
+<% end %>
+
+<input type="button" value="Go back!" onclick="history.back()">
