@@ -1,0 +1,11 @@
+
+<% @posts.each do |post| %>
+  <div class="allpost">
+    <p id="post"><strong><%= post.user.email %> : </strong></u><%= post.message %></p>
+    <% if Like.find_by(post: post, user: current_user) %>
+      <%= link_to 'Unlike', unlike_post_path(post), remote: true, method: :delete %>
+    <% else %>
+      <%= link_to 'Like', like_post_path(post), remote: true, method: :post %>
+    <% end %>
+  </div>
+<% end %>

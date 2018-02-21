@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180220061207) do
 
   create_table "particulars", force: :cascade do |t|
@@ -19,6 +20,17 @@ ActiveRecord::Schema.define(version: 20180220061207) do
     t.string "gender"
     t.string "introduction"
     t.index ["user_id"], name: "index_particulars_on_user_id"
+=======
+ActiveRecord::Schema.define(version: 20180220072906) do
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "post_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_likes_on_post_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+>>>>>>> 20b4170ee0480936f7a656d88562be464c80a774
   end
 
   create_table "posts", force: :cascade do |t|
