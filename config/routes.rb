@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   root "posts#index"
 
   resources :users, :only  => [:show , :edit , :update]
-  resources :posts
+  resources :posts do
+    post 'like', on: :member, to: 'likes#create'
+    delete 'unlike', on: :member, to: 'likes#destroy'
+  end
+  resources :likes
 
   namespace :admin do
     resources :posts

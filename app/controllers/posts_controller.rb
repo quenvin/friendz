@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+    @like = Like.new
   end
 
   def new
@@ -34,6 +35,15 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id]).destroy
     redirect_to posts_path
   end
+
+    def upvote
+    if !current_user.liked? @post
+      @post.liked_by current_user
+    elsif current_user.liked? @post
+      # as the above method can also result nil if he is yet to vote
+      @post.unliked_by current_user 
+    end
+  end 
 
   private
 
