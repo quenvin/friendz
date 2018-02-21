@@ -12,7 +12,11 @@ class User < ApplicationRecord
   validates :email, presence: true
 
   has_many :posts
+<<<<<<< HEAD
+  has_one :particular
+=======
   has_many :likes
+>>>>>>> 20b4170ee0480936f7a656d88562be464c80a774
 
 
 
