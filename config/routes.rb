@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   root "posts#index"
 
   resources :users, :only  => [:show , :edit , :update]
-  resources :posts
+  resources :particulars, :only => [ :show , :edit , :update , :create , :new]
+  # resources :posts
 
   namespace :admin do
     resources :posts
