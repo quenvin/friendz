@@ -8,7 +8,7 @@ class ParticularsController < ApplicationController
         if @particular.save
             redirect_to user_path(current_user)
         else
-            render :edit
+            render :new
         end
     end
 
