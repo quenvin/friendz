@@ -1,17 +1,15 @@
 <h1>Add new post page</h1>
 
-<%= form_for @post, url: posts_path, method: :post do |post| %>
-  <div class="newpost">
+ <%= form_for @post, url: posts_path, method: :post do |post| %>
+    <div class="newpost">
     
-    <%= post.label :message %>
-    <%= post.text_area :message, :maxlength => 140 %>
+      <%= post.label :message %>
+      <%= post.text_area :message, :maxlength => 140 %>
 
-    <div class="create_post">
-      <%= post.submit %>
-    </div>
+      <div class="create_post">
+        <%= post.submit %>
+      </div>
   </div>
 <% end %>
-
-
 
 <input type="button" value="Go back!" onclick="history.back()">

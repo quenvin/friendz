@@ -16,4 +16,10 @@
     <br>
     <%= @user.particular.name %>
     <%= @user.particular.age %>
+    <%= @user.particular.gender %>
     <%= @user.particular.introduction %>
+<% end %>
+<p>Followers</p>
+<p><%= current_user.followers.count %></p>
+
+

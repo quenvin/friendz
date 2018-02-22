@@ -7,6 +7,13 @@
     <% else %>
       <%= link_to 'Like', like_post_path(post), remote: true, method: :post %>
     <% end %>
+    
+    <% if Relationship.find_by(following_id: post.user, follower_id: current_user) %>
+      <%= link_to 'Unfollow', unfollow_post_path(post), remote: true, method: :delete %>
+    <% else %>
+      <%= link_to 'Follow', follow_post_path(post), remote: true, method: :post %>
+    <% end %>
+
   </div>
   <hr>
 <% end %>
