@@ -36,7 +36,7 @@ class ParticularsController < ApplicationController
       private
 
     def particulars_params
-        params.require(:particular).permit( :name , :age , :gender , :introduction)
+        params.require(:particular).permit( :name , :age , :gender , :introduction, :image)
     end
 
 
