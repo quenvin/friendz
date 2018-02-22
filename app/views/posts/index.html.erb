@@ -5,6 +5,7 @@
 <a href="/posts/show">My Posts</a>
 
 <hr>
-<div id="like">
-  <%= render partial: 'like_button' %>
+<div id="posts">
+  <%= render partial: 'post' %>
 </div>
+<%= will_paginate @posts %>
