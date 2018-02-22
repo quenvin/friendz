@@ -1,13 +1,19 @@
-<h1>Welcome <%= @user.username %> !</h1>
 
-<%= link_to "Change account username and email", edit_user_path(current_user) %>
+<% if @user == current_user %>
+    <h1>Welcome <%= @user.username %> !</h1>
 
-<% if current_user.particular == nil %>
-    <%= link_to "Create new additional particulars" , new_particular_path %>
-<% else %>
-    <%= link_to "Edit additional particulars" , edit_particular_path %>
-    <%= link_to "Back" , root_path %>
+    <%= link_to "Change account username and email", edit_user_path(current_user) %>
+    <% if current_user.particular == nil %>
+        <%= link_to "Create new additional particulars" , new_particular_path %>
+    <% else %>
+        <%= link_to "Edit additional particulars" , edit_particular_path %>
+        <%= link_to "Back" , root_path %>
+    <% end %>
+<% end %>
+
+    <br>
+    <%= image_tag @user.particular.image, width: '200px' %>
+    <br>
     <%= @user.particular.name %>
     <%= @user.particular.age %>
     <%= @user.particular.introduction %>
-<% end %>

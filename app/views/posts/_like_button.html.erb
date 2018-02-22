@@ -1,11 +1,13 @@
 
 <% @posts.each do |post| %>
   <div class="allpost">
-    <p id="post"><strong><%= post.user.email %> : </strong></u><%= post.message %></p>
+    <p id="post"><strong> <%= image_tag post.user.particular.image, width: "50px" if post.user.try(:particular).try(:image) %> <%= link_to post.user.username, user_path(post.user) %> : </strong></u><%= post.message %></p>
     <% if Like.find_by(post: post, user: current_user) %>
       <%= link_to 'Unlike', unlike_post_path(post), remote: true, method: :delete %>
     <% else %>
       <%= link_to 'Like', like_post_path(post), remote: true, method: :post %>
     <% end %>
   </div>
+  <hr>
 <% end %>
+
