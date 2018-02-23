@@ -2,7 +2,7 @@ class LikesController < ApplicationController
 
   def create
     Like.create(post_id: params[:id], user: current_user)
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC")
     render :toggle
   end
 
@@ -11,7 +11,7 @@ class LikesController < ApplicationController
   def destroy
     like = Like.find_by(post_id:params[:id])
     like.destroy
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC")
     render :toggle
   end
 
