@@ -23,6 +23,9 @@
     </div>
 </div>
 <div>
-    <p>Followers</p>
-    <p><%= current_user.followers.count %></p>
+
+    <h3><%= @relationship.where(following_id: @user.id).count %> User/s Following You</h3>
+        
+    <h3>Following <%= @relationship.where(follower_id: @user.id).count %> User/s</h3>
+
 </div>
