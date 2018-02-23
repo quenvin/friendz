@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
   def index
-
     if params[:search]
       users = User.search(params[:search])    
-      @posts = Post.where(user_id: users).order("created_at DESC")
+      posts = Post.where(user_id: users).order("created_at DESC")
+      @posts = posts.paginate(:page => params[:page], :per_page => 10)
     else
-      @posts = Post.all.order("created_at DESC")
+      posts = Post.all.order("created_at DESC")
+      @posts = posts.paginate(:page => params[:page], :per_page => 10)
     end
     @like = Like.new
   end
