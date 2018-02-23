@@ -11,16 +11,21 @@
                 <%= link_to "Edit additional particulars" , edit_particular_path , { :class=>"btn btn-primary hover" }%>
             <% end %>
         <% end %>
+        <% if current_user.particular != nil %>
+            <%= image_tag @user.particular.image, width: '200px' %>
+            <p class="User_info">Name: <%= @user.particular.name %></p>
+            <p class="User_info">Age: <%= @user.particular.age %></p>
+            <p class="User_info">Gender: <%= @user.particular.gender %></p>
+            <p class="User_info">Summary about myself : <%= @user.particular.introduction %></p>
+        <% end %>
 
         <%= link_to "Back" , root_path , { :class=>"btn btn-primary hover" } %>
-        <%= image_tag @user.particular.image, width: '200px' %>
-        <p class="User_info">Name: <%= @user.particular.name%></p>
-        <p class="User_info">Age: <%= @user.particular.age %></p>
-        <p class="User_info">Gender: <%= @user.particular.gender %></p>
-        <p class="User_info">Summary about myself : <%= @user.particular.introduction %></p>
     </div>
 </div>
 <div>
-    <p>Followers</p>
-    <p><%= current_user.followers.count %></p>
+
+    <h3><%= @relationship.where(following_id: @user.id).count %> User/s Following You</h3>
+        
+    <h3>Following <%= @relationship.where(follower_id: @user.id).count %> User/s</h3>
+
 </div>
