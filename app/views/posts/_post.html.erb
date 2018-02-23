@@ -1,6 +1,6 @@
 
 <% @posts.each do |post| %>
-  <div class="railpost">
+  <div class="post">
     <p id="post"><strong> <%= image_tag post.user.particular.image, width: "50px" if post.user.try(:particular).try(:image) %> <%= link_to post.user.username, user_path(post.user) %> : </strong></u><%= post.message %></p>
 
     <% if Like.find_by(post: post, user: current_user) %>
