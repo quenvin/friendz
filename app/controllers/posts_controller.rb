@@ -1,7 +1,5 @@
 class PostsController < ApplicationController
   def index
-
-    
     if params[:search]
       users = User.search(params[:search])    
       posts = Post.where(user_id: users).order("created_at DESC")
