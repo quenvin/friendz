@@ -1,16 +1,17 @@
 <h1>Add new post page</h1>
-
+<div class='wrap'>
  <%= form_for @post, url: posts_path, method: :post do |post| %>
     <div class="newpost">
     
-      <%= post.label :message %>
       
+ 
       <%= post.text_area :message, :maxlength => 140 , class: "text-area" , placeholder: "Type your message here !"%>
      
       <div class="create_post">
-        <%= post.submit %>
+        <%= post.submit class: 'btn btn-primary'  %>
       </div>
-  </div>
+        <input type="button" class="btn btn-primary" value="Go back!" onclick="history.back()">
+    </div>
 <% end %>
-
-<input type="button" value="Go back!" onclick="history.back()">
+  </div>
+</div>
