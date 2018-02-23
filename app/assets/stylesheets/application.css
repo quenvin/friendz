@@ -13,3 +13,101 @@
  *= require_tree .
  *= require_self
  */
+
+ /* <% else %>
+ <%= link_to('register' , new_user_registration_path) %>
+ <%= link_to('log in' , new_user_session_path) %> */
+
+h1{
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+
+ html, body {
+    height:100%;
+    background-color: rgb(190, 182, 240);
+}
+
+.log_in_filled_group {
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10%;
+    grid-auto-rows: 3em;
+    grid-template-areas: 
+    ". a a ."
+    ". a a .";
+
+}
+ .background_image {
+    height: 100%;
+    background-image: url("imageedit_3_7693506900.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index:1;
+    
+ }
+
+.title_LOG_IN {
+    color:rgb(34, 34, 95);
+    font-family: 'Gloria Hallelujah', cursive;
+    margin-left: 100%;
+    text-align:center;
+}
+
+.log_in {
+    font-family: 'Gloria Hallelujah', cursive;
+    grid-area: a;
+    align-self: center;
+    justify-self: center;
+    margin-top:5em;
+    text-align:center;
+}
+
+/* #======================================Front end======================== */
+.front_end_title {
+    
+}
+
+.front_end_overlap {
+    background-color: bisque;
+    height:100%;
+}
+
+.front-bg {
+    
+    text-align:center;
+    background-image:url("log-in-header.jpg");
+    background-position: 0 -3em;
+    color: white;
+    text-shadow:0.01em 0.01em black;
+    font-size: 5em;
+    font-family: 'Gloria Hallelujah', cursive;
+
+}
+
+.wrapper_buttons{
+    display:grid;
+    grid-template-columns: 1fr , 3em;
+    grid-gap: 2.5em;
+    margin-top: 3em;
+    margin-left:40%;
+    margin-right:40%;
+    font-family: 'Gloria Hallelujah', cursive;
+    
+
+
+/* #======================================Front end======================== */
+
+
+
+
+
+
+
+
+
+
+
+
+

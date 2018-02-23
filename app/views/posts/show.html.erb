@@ -1,11 +1,15 @@
+
+<div class= "wrap">
 <h1>My posts</h1>
 
 <% @posts.each do |post| %>
+
   <div class="mypost">
     <p id="post"><strong><%= post.user.email %> : </strong><%= post.message %></p>
     <%= link_to 'Edit', edit_post_path(post) %>
     <%= link_to 'Delete', post_path(post), method: :delete, data: {confirm:"Are you sure?"} %>
     <hr>
+  </div>
   </div>
 <% end %>
 
