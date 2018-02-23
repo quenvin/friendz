@@ -1,9 +1,13 @@
-<h1>Front_end</h1>
+<div class= "front_end_overlap">
+  <div class= "front-bg"><h1>Welcome to Friendz</h1></div>
+  
+<div class= "wrapper_buttons">
 
-<%= link_to "My profile page", current_user %>
-<a href="/posts/new">New Post</a>
-<a href="/posts/show">My Posts</a>
-
+  <%= link_to "My profile page", current_user , { :class=>"btn btn-primary btn-lg active 1" }  %>
+  <a href="/posts/new" class="btn btn-primary btn-lg active 2" role="button" aria-pressed="true" >New Post</a>
+  <a href="/posts/show" class="btn btn-primary btn-lg active 3" role="button" aria-pressed="true">My Posts</a>
+</div>
+  </div>
 <hr>
 <div id="posts">
   <%= render partial: 'post' %>

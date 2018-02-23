@@ -1,25 +1,26 @@
+<div>
+    <div class= "background">
+        <% if @user == current_user %>
+            <h1 class = "welcome_user" >Welcome <%= @user.username %> !</h1>
 
-<% if @user == current_user %>
-    <h1>Welcome <%= @user.username %> !</h1>
+            <%= link_to "Change account username and email", edit_user_path(current_user) ,{ :class=>"btn btn-primary hover first" }  %>
 
-    <%= link_to "Change account username and email", edit_user_path(current_user) %>
-    <% if current_user.particular == nil %>
-        <%= link_to "Create new additional particulars" , new_particular_path %>
-    <% else %>
-        <%= link_to "Edit additional particulars" , edit_particular_path %>
-        <%= link_to "Back" , root_path %>
-    <% end %>
-<% end %>
+            <% if current_user.particular == nil %>
+                <%= link_to "Create new additional particulars" , new_particular_path , { :class=>"btn btn-primary hover" } %>
+            <% else %>
+                <%= link_to "Edit additional particulars" , edit_particular_path , { :class=>"btn btn-primary hover" }%>
+            <% end %>
+        <% end %>
 
-    <br>
-    <%= image_tag @user.particular.image, width: '200px' %>
-    <br>
-    <%= @user.particular.name %>
-    <%= @user.particular.age %>
-    <%= @user.particular.gender %>
-    <%= @user.particular.introduction %>
-
-<p>Followers</p>
-<p><%= current_user.followers.count %></p>
-
-
+        <%= link_to "Back" , root_path , { :class=>"btn btn-primary hover" } %>
+        <%= image_tag @user.particular.image, width: '200px' %>
+        <p class="User_info">Name: <%= @user.particular.name %></p>
+        <p class="User_info">Age: <%= @user.particular.age %></p>
+        <p class="User_info">Gender: <%= @user.particular.gender %></p>
+        <p class="User_info">Summary about myself : <%= @user.particular.introduction %></p>
+    </div>
+</div>
+<div>
+    <p>Followers</p>
+    <p><%= current_user.followers.count %></p>
+</div>
