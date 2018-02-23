@@ -12,7 +12,7 @@
     <% if Relationship.find_by(following_id: post.user, follower_id: current_user) %>
       <%= link_to 'Unfollow', unfollow_post_path(post), remote: true, method: :delete %>
     <% else %>
-      <%= link_to 'Follow', follow_post_path(post), remote: true, method: :post %>
+      <%= link_to 'Follow', follow_post_path(post), remote: true, method: :post if post.user != current_user %>
     <% end %>
 
     <%= link_to 'Delete', post_path(post), method: :delete, data: {confirm:"Are you sure?"} if post.user == current_user %>
