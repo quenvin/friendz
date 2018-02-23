@@ -14,6 +14,8 @@
       <%= link_to 'Follow', follow_post_path(post), remote: true, method: :post %>
     <% end %>
 
+    <%= link_to 'Delete', post_path(post), method: :delete, data: {confirm:"Are you sure?"} if post.user == current_user %>
+
   </div>
   <hr>
 <% end %>
