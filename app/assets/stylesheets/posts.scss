@@ -1,3 +1,36 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.btn.btn-primary{
+    font-family: 'Nanum Pen Script', cursive;
+    margin-right: 5em;
+}
+
+
+.btn.btn-primary:hover{
+    background-color: rgb(41, 138, 41);
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.wrap{
+    padding-top:10%;
+    padding-right:10%;
+    margin-left:10%;
+  
+}
+.text-area{
+    width: 45em;
+    height: 45em;
+    resize: none;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.mypost{
+    font-family: 'Gloria Hallelujah', cursive;
+    
+}
+
+#post{
+    margin-bottom: 2em;
+    
+}
