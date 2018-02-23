@@ -42,4 +42,9 @@ class User < ApplicationRecord
   
     # validates_uniqueness_of :username, :case_sensitive => false
     # validates_uniqueness_of :email, :case_sensitive => false
+    def self.search(search)
+
+      where("username ILIKE ?", "%#{search}%") 
+    end
+
 end
