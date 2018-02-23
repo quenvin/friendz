@@ -28,6 +28,12 @@
    
     <% end %>
 
+    <div id="search">
+      <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Find User" %>
+        <%= submit_tag "Search", :name => nil %>
+      <% end %>
+    </div>
 
     <%= yield %>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
