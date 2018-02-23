@@ -14,6 +14,7 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery
+
 $(document).ready(function() {
   if ($('.pagination').length) {
     $(window).scroll(function() {

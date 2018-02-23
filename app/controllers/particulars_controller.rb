@@ -25,8 +25,8 @@ class ParticularsController < ApplicationController
       end
     
     def update
-        @particular = Particular.update(particulars_params)
-        if @particular.find
+        @particular = Particular.find(params[:id])
+        if @particular.update(particulars_params)
             redirect_to user_path
         else
           render :edit
