@@ -8,6 +8,7 @@ class PostsController < ApplicationController
       posts = Post.all.order("created_at DESC")
       @posts = posts.paginate(:page => params[:page], :per_page => 10)
     end
+    @tags = Hashtag.all
     @like = Like.new
   end
 
@@ -18,6 +19,13 @@ class PostsController < ApplicationController
   def create
     post = current_user.posts.new(post_params)
     post.save
+    tags = post.message.scan(/(?:^|\s)#(\w+)/).flatten
+    tags.each {|i| 
+      Hashtag.create(tag: i) if Hashtag.find_by(tag: i) == nil
+        
+      HashtagsPost.create(post: Post.last, hashtag: (Hashtag.find_by(tag: i)))
+    }
+
     redirect_to posts_path
   end
 
