@@ -1,6 +1,11 @@
 <div class= "front_end_overlap">
   <div class= "front-bg"><h1>Welcome to Friendz</h1></div>
   
+<% @hashtags.each do |hashtag| %>
+  <p><strong>#<%= hashtag.tag %> : </strong><%= @posthashs.where(hashtag_id: hashtag).count %></p>
+<% end %>
+
+
 <div class= "wrapper_buttons">
 
   <%= link_to "My profile page", current_user , { :class=>"btn btn-primary btn-lg active 1" }  %>

@@ -1,6 +1,6 @@
 <h1>Edit Post Page</h1>
 
-<%= form_for @post, url: posts_path, method: :post do |post| %>
+<%= form_for @post, url: post_path, method: :put do |post| %>
   <div class="editpost">
   
     <%= post.label :message %>
