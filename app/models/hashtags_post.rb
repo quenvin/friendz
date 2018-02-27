@@ -1,0 +1,2 @@
+class HashtagsPost < ApplicationRecord
+end
