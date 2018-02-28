@@ -15,15 +15,15 @@
 //= require_tree .
 //= require jquery
 
-// $(document).ready(function() {
-//   if ($('.pagination').length) {
-//     $(window).scroll(function() {
-//       var url = $('.pagination .next_page').attr('href');
-//       if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
-//         $('.pagination').text("Please Wait...");
-//         return $.getScript(url);
-//       }
-//     });
-//     return $(window).scroll();
-//   }
-// });
+$(document).on("turbolinks:load",function() {
+  if ($('.pagination').length) {
+    $(window).scroll(function() {
+      var url = $('.pagination .next_page').attr('href');
+      if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+        $('.pagination').text("Please Wait...");
+        return $.getScript(url);
+      }
+    });
+    return $(window).scroll();
+  }
+});

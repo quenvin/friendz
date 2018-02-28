@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     delete 'unlike', on: :member, to: 'likes#destroy'
     post 'follow', on: :member, to: 'follows#create'
     delete 'unfollow', on: :member, to: 'follows#destroy'
+
   end
   resources :likes
 
