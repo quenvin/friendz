@@ -2,7 +2,8 @@
   <div class= "front-bg"><h1>Welcome to Friendz</h1></div>
   
 <% @hashtags.each do |hashtag| %>
-  <p><strong>#<%= hashtag.tag %> : </strong><%= @posthashs.where(hashtag_id: hashtag).count %></p>
+    <p><strong>#<%= link_to hashtag.tag, posts_path %> : </strong><%= @posthashs.where(hashtag_id: hashtag).count %></p>
+
 <% end %>
 
 
