@@ -1,24 +1,48 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#Twitter Clone
 
-Things you may want to cover:
+## User stories
 
-* Ruby version
+* User can create an account
+* User can log in and log out of the account
+    - User must log in to read any pages in the site
+    - User can set the name when registering
+    - User's name cannot be repeated. (must be unique in the database)
+* User can edit their own profile (incl. name, introduction and avatar)
+* User can post a tweet (limited to 140 words)
+    - User can read all the tweets on the home page
+* User can visit another user's profile and all their tweets
+    - User can reply to others tweet
+    - User can follow/unfollow other users (cannot follow themselves)
+    - User can like/unlike tweets
+* Any logged in user can see following information for a specific user
+    - Tweets - Sort by date
+    - Following - show the following list of the user, sorted by the time which the record was created
+    - Follower - show the follower of the user, sorted by the time which the record was created
+    - Like - show the tweet list liked by the user, sorted by the time which the record was created
 
-* System dependencies
 
-* Configuration
+## Setup
 
-* Database creation
+1. Clone the application
+```
+git clone https://github.com/BernardLeong/friendz.git
+```
 
-* Database initialization
+2. Run bundle
+```
+cd friendz(if you are using code editor, Ctrl K + O into the git clone folder)
+bundle install
+```
 
-* How to run the test suite
+3. Setup the database
+```
+rake db:create db:migrate db:seed
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+4. Run rails server
+```
+rails s
+```
 
-* Deployment instructions
 
-* ...
